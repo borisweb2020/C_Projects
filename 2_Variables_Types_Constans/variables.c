@@ -19,4 +19,8 @@ int main(void) {
 	int y = 2;
 	float result = (float) 5 / 2; // explicit conversion
 	printf("The result: %.2f\n", result);
+
+	/*Constans*/
+	const int BIRTHYEAR = 1979;
+	printf("My birth year is %d\n", BIRTHYEAR);
 }
