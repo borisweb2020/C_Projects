@@ -4,4 +4,5 @@
  <li> Variables, types and constans <code> Jan. 27, 2023 </code> </li>
  <li> Booleans <code> Jan. 30, 2023 </code> </li>
  <li> if ... else, switch statement and ternary operator <code> Feb. 01, 2023 </code> </li>
+ <li> Loops <code> Feb. 02, 2023 </code> </li>
 </ol> 
