@@ -6,4 +6,5 @@
  <li> if ... else, switch statement and ternary operator <code> Feb. 01, 2023 </code> </li>
  <li> Loops <code> Feb. 02, 2023 </code> </li>
  <li> Arrays <code> Feb. 03, 2023 </code> </li>
+ <li> Strings <code> Feb. 04, 2023 </code> </li>
 </ol> 
