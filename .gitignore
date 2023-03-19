@@ -1,0 +1,6 @@
+# all executable files
+out
+.clang-format
+
+# folders
+materials
