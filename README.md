@@ -1,10 +1,11 @@
-<h1> The <strong> C </strong> Programming Language Review </h1>
+<h1>The <strong>C</strong> Programming Language Review</h1>
 <ol>
- <li><code>helloWorld.c</code> - input data, check data, output data</li>
- <li> Variables, types and constans <code> Jan. 27, 2023 </code> </li>
- <li> Booleans <code> Jan. 30, 2023 </code> </li>
- <li> if ... else, switch statement and ternary operator <code> Feb. 01, 2023 </code> </li>
- <li> Loops <code> Feb. 02, 2023 </code> </li>
- <li> Arrays <code> Feb. 03, 2023 </code> </li>
+ <li>Introduction to C:
+    <ul>
+      <li><code>helloWorld.c</code> - input data, check data, output data</li>
+      <li><code>arithmetic.c</code> - receives two integers via <i>stdin</i> and checks for the input data for integers</li>
+    </ul>
+ </li>
+
  <li> Strings <code> Feb. 04, 2023 </code> </li>
 </ol> 
