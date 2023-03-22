@@ -1,26 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void) {
-	int age = 0; // initializing a variable at declaration
-	age = 37; // changing its value
-	printf("%d\n", age); // %d or %i - format specifiers for int 
+int prime(int n);    // is prime (return 1 - true) or not (return 0 - false)
+int divisor(int a);  // largest divisor
 
-	char name;
-	name = 'D';
-	printf("%c\n", name); // %c - a format specifier for char
+int main() {
+    int a;
+    char c;
 
-	float floatNumber = 5.784;
-	printf("%f\n", floatNumber); // %f - a format specifier for float
+    if (scanf("%d%c", &a, &c) == 2 && c == '\n') {
+        a = abs(a);
+        printf("%d\n", divisor(a));
+    } else {
+        printf("n/a\n");
+    }
 
-	printf("The age is %d and the name is %c and the float is %.3f\n", age, name, floatNumber);
+    return 0;
+}
 
-	/*Type Conversion*/
-	int x = 5;
-	int y = 2;
-	float result = (float) 5 / 2; // explicit conversion
-	printf("The result: %.2f\n", result);
+int divisor(int a) {
+    int result = 1;
+    for (int i = a - 1; i > 0; i--) {
+        if (a % i == 0) {
+            if (prime(i)) {
+                result = i;
+                break;
+            }
+        }
+    }
 
-	/*Constans*/
-	const int BIRTHYEAR = 1979;
-	printf("My birth year is %d\n", BIRTHYEAR);
+    return result;
+}
+
+int prime(int n) {
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0) return 0;  // not prime
+    return 1;
 }
