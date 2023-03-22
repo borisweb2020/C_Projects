@@ -9,6 +9,9 @@
       result of calculating the function, which has <i>pow()</i> and <i>round()</i> math functions</li>
     </ul>
  </li>
-
- <li> Strings <code> Feb. 04, 2023 </code> </li>
+ <li>Basic control structures, recursive, table:
+    <ul>
+      <li><code>prime_divisor.c</code> - finds the largest prime divisor of any predetermined integer. It is necessary to allocate a separate function for calculating this value</li>
+    </ul>
+ </li>
 </ol> 
