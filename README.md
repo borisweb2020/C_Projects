@@ -11,7 +11,7 @@
  </li>
  <li>Basic control structures, recursive, table:
     <ul>
-      <li><code>prime_divisor.c</code> - finds the largest prime divisor of any predetermined integer. It is necessary to allocate a separate function for calculating this value</li>
+      <li><code>prime_divisor.c</code> - finds the largest prime divisor of any predetermined integer, by using division and the operation of taking the remainder of the division</li>
     </ul>
  </li>
 </ol> 
