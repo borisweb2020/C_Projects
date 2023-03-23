@@ -1,9 +1,8 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int prime (int n); // is prime (return 1 - true) or not (return 0 - false)
-
-int divisor(int a); // largest divisor
+int is_prime(int n);  // is prime (return 1 - true) or not (return 0 - false)
+int divisor(int a);   // largest divisor
 
 int main() {
     int a;
@@ -11,7 +10,11 @@ int main() {
 
     if (scanf("%d%c", &a, &c) == 2 && c == '\n') {
         a = abs(a);
-        printf("%d\n", divisor(a));
+        if (a == 1 || a == 0) {
+            printf("invalid value\n");
+        } else {
+            printf("%d\n", divisor(a));
+        }
     } else {
         printf("n/a\n");
     }
@@ -21,9 +24,23 @@ int main() {
 
 int divisor(int a) {
     int result = 1;
+    int condition = 1;
+
     for (int i = a - 1; i > 0; i--) {
-        if (a % i == 0) {
-            if (prime(i)) {
+        result = i;
+        condition = 1;
+        while (condition) {
+            result += i;
+            if (result > a) {
+                condition = 0;
+            }
+            if (result == a) {
+                result = i;
+                condition = 0;
+            }
+        }
+        if (result == i) {
+            if (is_prime(i)) {
                 result = i;
                 break;
             }
@@ -33,8 +50,29 @@ int divisor(int a) {
     return result;
 }
 
-int prime(int n) {
-    for (int i = 2; i * i <= n; i++)
-        if (n % i == 0) return 0; // not prime
-    return 1;
+int is_prime(int n) {
+    int result;
+    int condition = 1;
+    if (n == 2 || n == 3) {
+        result = 1;
+    }
+    for (int i = 2; i * i <= n; i++) {
+        result = i;
+        condition = 1;
+        while (condition) {
+            result += i;
+            if (result > n) {
+                condition = 0;
+            }
+            if (result == n) {
+                condition = 0;
+            }
+        }
+        if (result == n) {
+            result = 0;  // is not prime
+            break;
+        }
+    }
+
+    return result;
 }
