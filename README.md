@@ -13,6 +13,7 @@
     <ul>
       <li><code>prime_divisor.c</code> - finds the largest prime divisor of any predetermined integer, by using division and the operation of taking the remainder of the division</li>
       <li><code>prime_divisor_1948.c</code> - finds the largest prime divisor of any predetermined integer, WITHOUT using division and the operation of taking the remainder of the division</li>
+      <li><code>sum_sequence.c</code> - finds the sum of the sequence <img src="misc/sequence.png" alt="The sum sequence"> </li>
     </ul>
  </li>
 </ol> 
