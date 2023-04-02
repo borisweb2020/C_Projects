@@ -16,6 +16,7 @@
       <li><code>sum_sequence.c</code> - finds the sum of the sequence <img src="misc/sequence.png" alt="The sum sequence" width="180" align="middle"> </li>
       <li><code>factorial.c</code> - finds the factorial using and without using a recursive algorithm</li>
       <li><code>fibonacci.c</code> - finds the a number from the Fibonacci sequence using and without using a recursive algorithm</li>
+      <li><code>random.c</code> - generates a random value</li>
     </ul>
  </li>
 </ol> 
