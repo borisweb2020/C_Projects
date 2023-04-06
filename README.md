@@ -17,6 +17,7 @@
       <li><code>factorial.c</code> - finds the factorial using and without using a recursive algorithm</li>
       <li><code>fibonacci.c</code> - finds the a number from the Fibonacci sequence using and without using a recursive algorithm</li>
       <li><code>random.c</code> - generates a random value</li>
+      <li><code>char_decode.c</code> - takes operation mode (0 - encoding / 1 - decoding) as a command-line parameter and accepts characters separated by a space and outputs encoded or decoded characters. A line break character is a sign of the end of the input</li>
     </ul>
  </li>
 </ol> 
