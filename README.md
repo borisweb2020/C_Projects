@@ -7,6 +7,7 @@
       <li><code>max.c</code> - receives two integers via <i>stdin</i>, checks for the input data for integers and outputs the maximum value</li>
       <li><code>function.c</code> - receives one floating-point number, checks for the input data so the programm only receives numbers and displays
       result of calculating the function, which has <i>pow()</i> and <em>round()</em> math functions</li>
+      <li><code>input_char.c</code> - keyboard input and console output of a single character. Cleaning the buffer from the inputted character <em>'\n'</em></li>
     </ul>
  </li>
  <li>Basic control structures, recursive, table:
