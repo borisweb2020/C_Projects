@@ -5,7 +5,7 @@ int main() {
     putchar(space);   // space
     putchar('\n');    // Line Feed == Line Break Character (LBC) == 10 ASCII code
 
-    char a = 'A';  // A
+    char a = 0x4C;  // L == 76 == 4C (16-я система)
     putchar(a);    // A
     putchar('\n');
 
