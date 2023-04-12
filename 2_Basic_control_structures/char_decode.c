@@ -1,61 +1,76 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
-// Функция кодирования одного символа:
-void encode(const char *input, char *output);
-
-// Функция декодирования одного символа:
-void decode(const char *input, char *output);
+int encode(char *buffer, char *output, int length);
+int decode(char *buffer, int length);
 
 int main(int argc, char *argv[]) {
-    // Определяем указан ли параметр:
     if (argc != 2) {
-        fprintf(stderr, "Usage: %s <0 for encoding or 1 for decoding>\n", argv[0]);
+        printf("Usage: %s <0 for encoding or 1 for decoding>\n", argv[0]);
         return 1;
     }
-    // Определение режима работы программы:
+
     int mode = atoi(argv[1]);
-    // if (mode != 0 && mode != 1) {
-    //     printf("Invalid mode. Use 0 for encoding or 1 for decoding.\n");
-    //     return 1;
-    // }
+    char buffer[256], output[256];
+    
 
-    char input[4096], output[8192];
-
-    if (fgets(input, sizeof(input), stdin)) {
-        input[strcspn(input, "\n")] = '\0';
-
-        if (mode == 0) {
-            encode(input, output);
-        } else if (mode == 1) {
-            decode(input, output);
-        } else {
-            fprintf(stderr, "Invalid mode. Use 0 for encoding or 1 for decoding.\n");
-            return 1;
+    //*** let's enter "w o r l d"
+    if (fgets(buffer, sizeof(buffer), stdin)) {  // w32o32r32l32d32\n\0\0\0... 
+        int length = strlen(buffer);  // == 11
+        if (buffer[length - 1] == '\n') {
+            buffer[length - 1] = '\0';  // == now, length of buffer == 10
         }
-        printf("%s\n", output);
-        return 0;
+        length = strlen(buffer);  // == 10
+        if (mode == 0) {
+            encode(buffer, output, length);
+        } else if (mode == 1) {
+            decode(buffer, length);
+        } else {
+          printf("Wrong mode");
+        }
+        printf("\n");
     } else {
-        fprintf(stderr, "Error reading input.\n");
-        return 1;
+        printf("Input error\n");
     }
+
+
+    return 0;
 }
 
-void encode(const char *input, char *output) {
-    while (*input) {
-        sprintf(output, "%02X", (unsigned char) *input);
-        output += 2;
-        input++;
+int encode(char *buffer, char *output, int length) {
+    for (int i = 0; i < length; i++) {
+        output[i] = buffer[i];
+        if (i % 2 != 0) {
+            if (buffer[i] != 32){
+                printf("Needed a space between symbols");
+                return 1;
+            }
+        }
     }
+    for (int i = 0; i < length; i++) {
+        if (i % 2 == 0) {
+            printf("%X ", output[i]);
+        }
+    }
+
+    return 0;
 }
 
-void decode(const char *input, char *output) {
-    while (*input) {
-        char buf[3] = {input[0], input[1], '\0'};
-        *output = (char) strtol(buf, NULL, 16);
-        output++;
-        input += 2;
+int decode(char *buffer, int length) { // [45 5E 70 3A]
+    int space = 2;
+    // long int num;
+    char str[2];
+    for (int i = 0; i < length; i++) {
+        str[i] = buffer[i];
+        if (i == space) {
+            break;
+        }
     }
+
+    for (int i = 0; i < 2; i++) {
+        printf("%c ", str[i]);
+    }
+
+    return 0;
 }
