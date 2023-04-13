@@ -13,11 +13,10 @@ int main(int argc, char *argv[]) {
 
     int mode = atoi(argv[1]);
     char buffer[256], output[256];
-    
 
     //*** let's enter "w o r l d"
-    if (fgets(buffer, sizeof(buffer), stdin)) {  // w32o32r32l32d32\n\0\0\0... 
-        int length = strlen(buffer);  // == 11
+    if (fgets(buffer, sizeof(buffer), stdin)) {  // w32o32r32l32d32\n\0\0\0...
+        int length = strlen(buffer);             // == 11
         if (buffer[length - 1] == '\n') {
             buffer[length - 1] = '\0';  // == now, length of buffer == 10
         }
@@ -27,13 +26,12 @@ int main(int argc, char *argv[]) {
         } else if (mode == 1) {
             decode(buffer, length);
         } else {
-          printf("Wrong mode");
+            printf("Wrong mode");
         }
         printf("\n");
     } else {
         printf("Input error\n");
     }
-
 
     return 0;
 }
@@ -42,12 +40,13 @@ int encode(char *buffer, char *output, int length) {
     for (int i = 0; i < length; i++) {
         output[i] = buffer[i];
         if (i % 2 != 0) {
-            if (buffer[i] != 32){
+            if (buffer[i] != 32) {
                 printf("Needed a space between symbols");
                 return 1;
             }
         }
     }
+
     for (int i = 0; i < length; i++) {
         if (i % 2 == 0) {
             printf("%X ", output[i]);
@@ -57,19 +56,36 @@ int encode(char *buffer, char *output, int length) {
     return 0;
 }
 
-int decode(char *buffer, int length) { // [45 5E 70 3A]
+int decode(char *buffer, int length) {  // [45 5E 70 3A]
     int space = 2;
-    // long int num;
-    char str[2];
+
+    long int num[256];
+    int n = 0;
+
+    char str[4] = "0x";  // [0x45]
+    int j = 2;
+
     for (int i = 0; i < length; i++) {
-        str[i] = buffer[i];
         if (i == space) {
-            break;
+            if (buffer[i] != 32) {
+                printf("Needed a space between symbols");
+                return 1;
+            }
+            space += 3;
+            continue;
+        }
+        str[j] = buffer[i];
+        j++;
+        if (j == 4) {
+            num[n] = strtol(str, NULL, 16);
+            n++;
+            j = 2;
         }
     }
 
-    for (int i = 0; i < 2; i++) {
-        printf("%c ", str[i]);
+    for (int i = 0; i < n; i++) {
+        char c = num[i];
+        printf("%c ", c);
     }
 
     return 0;
