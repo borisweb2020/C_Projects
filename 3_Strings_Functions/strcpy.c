@@ -24,7 +24,7 @@ int main() {
     char string_5[10];
     char string_6[] = "abc";
     strncpy(string_5, string_6, 2);  // копировать 2 символа
-    string_5[2] = '\0';  // добавить завершающий '\0'
+    string_5[2] = '\0';              // добавить завершающий '\0'
     puts(string_5);
 
     return 0;
