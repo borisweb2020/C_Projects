@@ -2,26 +2,6 @@
 #include <string.h>
 
 int main() {
-    puts("**** strlen ****");
-    char name[] = "Prodijy";
-    printf("A length of the string %s is equal %lu\n", name, strlen(name)); // length == 7
-
-    char name_2[10] = "Prodijy\n"; // Если получаем через scanf() или fgets(), то
-    printf("A length of the string %s is equal %lu\n", name_2, strlen(name_2)); // length == 8
-    if (name_2[strlen(name_2) - 1] == '\n') {
-        name_2[strlen(name_2) - 1] = '\0'; // поэтому удаляем символ \n
-    }
-    printf("A length of the string %s is equal %lu\n", name_2, strlen(name_2)); // length == 7
-
-    char name_3[10];
-    char c;
-    if (fgets(name_3, sizeof(name_3), stdin)) { // Если будет введено более 9 символов
-        printf("A length of the string %s is equal %lu\n", name_3, strlen(name_3));
-    }
-    c = getchar(); // то 10-й будет перехвачен здесь. Поэтому нужно чистить буфер 
-    putchar(c);
-
-    puts("**** strcmp ****");
     char name_4[] = "Bill";
     char name_5[] = "Bob";
     int d = strcmp(name_4, name_5);
@@ -43,6 +23,44 @@ int main() {
     } else {
         printf("%s\n%s\n", string_2, string_1);
     }
+
+    /*
+    Иногда сравнивают не всю строку, а только первые несколько символов --- strncmp()
+    Третий параметр функции - количество стравниваемых символов
+    */
+    char string_3[10], string_4[10];
+    printf("Введите первую строку: ");
+    scanf("%s", string_3);
+    printf("Введите вторую строку: ");
+    scanf("%s", string_4);
+    if (strncmp(string_3, string_4, 2) == 0) {
+        printf("Первые два символа %s и %s одинаковы\n", string_3, string_4);
+    } else {
+        printf("Первые два символа %s и %s разные\n", string_3, string_4);
+    }
+
+    /*
+    Программа, которая спрашивает пароль и, если пароль введен неверно, заканчивает работу,
+    а если верно, то определяет сколько цифр в символьной строке:
+    */
+    char password[] = "string";
+    char input_string[50];
+    int i = 0, count = 0;
+    printf("Введите пароль: ");
+    scanf("%s", input_string);
+    if (strcmp(password, input_string) != 0) {
+        printf("Неверный пароль\n");
+        return 1;
+    }
+    printf("Введите строку: ");
+    scanf("%s[^\n]", input_string);
+    while (input_string[i] != '\0') { // пока не дойдем до символа NULL
+        if (input_string[i] >= 48 && input_string[i] <= 57) { // коды для цифр от 48 до 57
+            count++;
+        }
+        i++;
+    }
+    printf("Количество цифр в строке: %d\n", count);
 
     return 0;
 }
