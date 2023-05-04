@@ -22,4 +22,13 @@
       <li><code>char_decode.c</code> - takes operation mode (0 - encoding / 1 - decoding) as a command-line parameter and accepts characters separated by a space and outputs encoded or decoded characters. A line break character is a sign of the end of the input</li>
     </ul>
  </li>
+ <li>String Functions:
+    <ul>
+      <li><code>strcat.c</code> - finds the largest prime divisor of any predetermined integer, by using division and the operation of taking the remainder of the division</li>
+      <li><code>strchr.c</code> - finds the largest prime divisor of any predetermined integer, WITHOUT using division and the operation of taking the remainder of the division</li>
+      <li><code>strcmp.c</code> - finds the sum of the sequence <img src="misc/sequence.png" alt="The sum sequence" width="180" align="middle"> </li>
+      <li><code>strcpy.c</code> - finds the factorial using and without using a recursive algorithm</li>
+      <li><code>strlen.c</code> - finds the a number from the Fibonacci sequence using and without using a recursive algorithm</li>
+    </ul>
+ </li>
 </ol> 
