@@ -23,5 +23,16 @@ int main() {
         printf("Нет строки dogs в %s\n", string_2);
     }
 
+    //***** Замена символа \n на \0 *****
+    char name[10];
+    char *pointer;
+    if (fgets(name, sizeof(name), stdin) != NULL) {
+        pointer = strrchr(name, '\n');
+        if (pointer != NULL) *pointer = '\0';
+        printf("Length: %lu\n", strlen(name));
+    } else {
+        printf("Input Error");
+    }
+
     return 0;
 }
