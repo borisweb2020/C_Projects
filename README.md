@@ -8,6 +8,7 @@
       <li><code>function.c</code> - receives one floating-point number, checks for the input data so the programm only receives numbers and displays the result of calculating a function, which has <i>pow()</i> math function, implicit and explicit type conversion</li>
       <li><code>input_char.c</code> - keyboard input and console output of a single character. Cleaning the buffer from the inputted character <em>'\n'</em></li>
       <li><code>input_string.c</code> - keyboard input and console output of strings</li>
+      <li><code>float_compare.c</code> - demonstrates how to print floating-point variables in exponential format, how the compiler performs implicit type conversion to a single type, and how data can be explicitly converted to the required type</li>
     </ul>
  </li>
  <li>Basic control structures, recursive, table:
