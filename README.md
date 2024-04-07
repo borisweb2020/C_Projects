@@ -15,7 +15,7 @@
 - `prime_divisor_subtract.c` - calculates the largest prime divisor of any predetermined integer, WITHOUT using division and the operation of taking the remainder of the division and by using only subtraction
 - `sum_sequence.c` - finds the sum of the sequence `S = 1/2 - 2/4 + 3/8 - 4/16 + ...`
 - `factorial.c` - finds the factorial using and without using a recursive algorithm
-- `fibonacci.c` - finds a number from the Fibonacci sequence by using dynamic programming with top-down and bottom-up aproaches
+- `fibonacci.c` - finds a number from the Fibonacci sequence by using _**dynamic programming**_ with top-down and bottom-up aproaches
 - `random.c` - generates a random value
 - `char_decode.c` - takes operation mode (0 - encoding / 1 - decoding) as a command-line parameter and accepts characters separated by a space and outputs encoded or decoded characters. A line break character is a sign of the end of the input. The encoded numbers are represented in hexadecimal
 - `three_functions` - calculates three functions and displays a table in *data.txt* by using output redirection. The first column contains the values from -&pi; through +&pi; with 42 measurements at this interval. The second, third and fourth ones describe the values of the functions at a point
