@@ -27,7 +27,7 @@ int main() {
 int input(int *a, int *n) {
     int result = 1;
     char c;
-    if (scanf("%d%c", n, &c) == 2 && c == '\n' && *n > 2) {
+    if (scanf("%d%c", n, &c) == 2 && c == '\n' && *n >= 2) {
         for (int *p = a; p - a < *n; p++) {
             scanf("%d", p);
             c = getchar();
