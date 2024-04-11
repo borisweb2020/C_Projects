@@ -33,3 +33,4 @@
 - `maxmin.c` - finds *max* and *min* out of 3 integer numbers and displays them on the screen
 - `squaring.c` - receives an array of integers via *stdin*, squares them and outputs the result to *stdout*
 - `stat.c` - receives an array of integers via *stdin*, displays it, calculates and displays on the new line a set of statistical metrics – maximum and minimum, the expected value and variance, assuming that we are dealing with a discrete uniform distribution
+- `search.c` - receives an array of integers via *stdin* and find the first occurrence of number that meets the following requirements in that array: even number, equal to or above the expected value, follows the three-sigma rule, does not equal 0. The number it finds must be output to *stdout*. If such number does not exist, the program must output 0. The maximum number of numbers entered is 30
