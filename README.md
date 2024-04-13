@@ -38,3 +38,4 @@
 ## Sorting Algorithms
 - `bubble_sort.c` - sorts an array in ascending order by using **Bubble Sort** method, which works by continually passing through the elements of the array and swapping those that are found to be out of order. *Passing an array to a function by a pointer*
 - `selection_sort.c` - sorts an array in ascending order by using **Selection Sort** method, which repeatedly finds the minimum element in the unsorted portion of the array and if necessary swaps it, increasing the protion of the sorted array with each iteration. *Passing an array to a function as the array*
+- `insertion_sort.c` - sorts an array in ascending order by using **Insertion Sort** method, which examines each element on the right-hand side of the array from the second element on to the end of the array and the inner loop shifts over elements on the sorted left-hand side of the array until the correct sorted position is found
