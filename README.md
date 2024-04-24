@@ -27,6 +27,7 @@
 - `strcmp.c` - takes a password and in case of success finds the total amount of digits in the string
 - `strcpy.c` - copies the characters of the string in reverse order to add the new string between two original ones
 - `strlen.c` - reviews the `strlen()` function
+- `char_array_vs_char_pointer.c` - reviews the diffrence between a string stored in a char array compared to a pointer to a string literal: `char s[] = "string";` _**VS**_ `char *s = "string";`
 
 ## Pointers:
 - `pointer_intro.c` - describes basic pointers concepts: creation, manipulation and pointer arithmetic
