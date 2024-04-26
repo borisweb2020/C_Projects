@@ -41,3 +41,6 @@
 - `selection_sort.c` - sorts an array in ascending order by using **Selection Sort** method, which repeatedly finds the minimum element in the unsorted portion of the array and if necessary swaps it, increasing the protion of the sorted array with each iteration. *Passing an array to a function as the array*
 - `insertion_sort.c` - sorts an array in ascending order by using **Insertion Sort** method, which examines each element on the right-hand side of the array from the second element on to the end of the array and the inner loop shifts over elements on the sorted left-hand side of the array until the correct sorted position is found
 - `quick_sort_Lomuto.c` - sorts an array of 10 integer elements in ascending order by using **Quicksort** algorithm Lomuto
+
+## Tasks
+- `1_find_evens_sum.c` - receives the array's length and an array of integers via *stdin* and outputs in *stdout* the sum of the even elements of the array and the newly elements of the old one, by which the previously calculated sum is divided evenly
