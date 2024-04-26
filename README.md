@@ -27,7 +27,7 @@
 - `strcmp.c` - takes a password and in case of success finds the total amount of digits in the string
 - `strcpy.c` - copies the characters of the string in reverse order to add the new string between two original ones
 - `strlen.c` - reviews the `strlen()` function
-- `char_array_vs_char_pointer.c` - reviews the diffrence between a string stored in a char array compared to a pointer to a string literal: `char s[] = "string";` _**VS**_ `char *s = "string";`
+- `char_array_vs_char_pointer.c` - reviews the diffrence between a string stored in a char array compared to a pointer to a string literal: `char s[] = "string";` _**vs**_ `char *s = "string";`
 
 ## Pointers:
 - `pointer_intro.c` - describes basic pointers concepts: creation, manipulation and pointer arithmetic
@@ -44,3 +44,4 @@
 
 ## Tasks
 - `1_find_evens_sum.c` - receives the array's length and an array of integers via *stdin* and outputs in *stdout* the sum of the even elements of the array and the newly elements of the old one, by which the previously calculated sum is divided evenly
+- `2_cycle_shift.c` - receives the length of an array, the array and a number by which all elements of the array must rotate to the left or if the value is negative, to the right. The modified array is expected as output in *stdout*
