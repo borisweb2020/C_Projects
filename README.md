@@ -52,3 +52,9 @@
 | 1 9 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 6 1<br/>2 9 | 1 9 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 9 0<br/>1 9 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 3 2 |
 | 0 1 0<br/>0 0 1 | 1 1<br/>9 |
 | 1 2 3<br/>2 5 6 | 3 7 9<br/>n/a |
+
+- `4_digits_to_number.c` - receives an array of decimal digits and an integer, converts the array to an integer and the entered integer to decimal digits
+
+| Input | Output |
+|:------|:-------|
+| 1 2 3 4 5<br/>72546 | 12345<br/>7 2 5 4 6 | 
