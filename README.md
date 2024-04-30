@@ -45,7 +45,8 @@
 ## Tasks
 - `1_find_evens_sum.c` - receives the array's length and an array of integers via *stdin* and outputs in *stdout* the sum of the even elements of the array and the newly elements of the old one, by which the previously calculated sum is divided evenly
 - `2_cycle_shift.c` - receives the length of an array, the array and a number by which all elements of the array must rotate to the left or if the value is negative, to the right. The modified array is expected as output in *stdout*
-- `3_large_number.c` - returns the result of addition and subtraction of two very large numbers that were passed to the program as input in the form of arrays. Maximum number length: 100 elements of type `int`. The integers entered are decimal digits. If the subtrahend is higher than the minuend, "n/a" is displayed instead of the difference. 
+- `3_large_number.c` - returns the result of addition and subtraction of two very large numbers that were passed to the program as input in the form of arrays. Maximum number length: 100 elements of type `int`. The integers entered are decimal digits. If the subtrahend is higher than the minuend, "n/a" is displayed instead of the difference.
+
 | Input | Output |
 | ------ | ------ |
 | 1 9 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 6 1<br/>2 9 | 1 9 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 9 0<br/>1 9 4 4 6 7 4 4 0 7 3 7 0 9 5 5 1 3 2 |
