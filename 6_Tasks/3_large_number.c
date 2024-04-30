@@ -1,23 +1,28 @@
 #include <stdio.h>
 #define NMAX 100
 
-int input(int *arr_1, int *arr_2, int *length_1, int *length_2);
+int input(int *array, int *length);
 void sum_digits(const int *arr_1, const int *arr_2, int length_1, int length_2, int *arr_result,
                 int *length_result);
 void subtract_digits(int *arr_1, const int *arr_2, int length_1, int length_2, int *arr_result,
                      int *length_result);
 void reverse_array(int *array, int length);
+int is_bigger(int *minuend, int length_1, int *subtrahend, int length_2);
+void remove_zeros(int *array, int *length);
 void output(int *array, int length);
 
 int main() {
     int data_1[NMAX], data_2[NMAX], length_1, length_2;
 
-    if (input(data_1, data_2, &length_1, &length_2)) {
+    if (input(data_1, &length_1) && input(data_2, &length_2)) {
         int result[NMAX], length_result;
+        remove_zeros(data_1, &length_1);
+        remove_zeros(data_2, &length_2);
         sum_digits(data_1, data_2, length_1, length_2, result, &length_result);
         output(result, length_result);
-        if (length_1 > length_2 || (length_1 == length_2 && data_1[0] >= data_2[0])) {
+        if (!is_bigger(data_1, length_1, data_2, length_2)) {
             subtract_digits(data_1, data_2, length_1, length_2, result, &length_result);
+            remove_zeros(result, &length_result);
             output(result, length_result);
         } else {
             printf("n/a\n");
@@ -29,52 +34,34 @@ int main() {
     return 0;
 }
 
-int input(int *arr_1, int *arr_2, int *length_1, int *length_2) {
+int input(int *array, int *length) {
     int result = 1;
     int condition = 1;
-    *length_1 = 0;
-    *length_2 = 0;
-    char c;
+    *length = 0;
 
     while (condition) {
-        scanf("%d", arr_1);
-        c = getchar();
-        if (c == ' ' && *arr_1 >= 0 && *arr_1 < 10) {
-            (*length_1)++;
-            arr_1++;
+        scanf("%d", array);
+        if (*array < 0 || *array >= 10) {
+            result = 0;
+            condition = 0;
+        }
+        char c = getchar();
+        if (c == ' ') {
+            (*length)++;
+            array++;
             continue;
         }
         if (c != '\n') {
-            *length_1 = 0;
+            *length = 0;
             result = 0;
             condition = 0;
         } else {
-            (*length_1)++;
+            (*length)++;
             condition = 0;
         }
     }
 
-    if (result) condition = 1;
-
-    while (condition) {
-        scanf("%d", arr_2);
-        c = getchar();
-        if (c == ' ' && *arr_2 >= 0 && *arr_2 < 10) {
-            (*length_2)++;
-            arr_2++;
-            continue;
-        }
-        if (c != '\n') {
-            *length_2 = 0;
-            result = 0;
-            condition = 0;
-        } else {
-            (*length_2)++;
-            condition = 0;
-        }
-    }
-
-    if (*length_1 <= 1 || *length_2 <= 1) result = 0;
+    if (*length <= 1) result = 0;
 
     return result;
 }
@@ -161,5 +148,41 @@ void reverse_array(int *array, int length) {
             array[i] = array[j];
             array[j] = tmp;
         }
+    }
+}
+
+int is_bigger(int *minuend, int length_1, int *subtrahend, int length_2) {
+    int result;
+    if (length_2 > length_1) {
+        result = 1;
+    } else if (length_2 == length_1) {
+        for (int *p = subtrahend, *q = minuend; q - minuend < length_1; p++, q++) {
+            result = 0;
+            if (*p > *q) {
+                result = 1;
+                break;
+            }
+        }
+    } else {
+        result = 0;
+    }
+
+    return result;
+}
+
+void remove_zeros(int *array, int *length) {
+    int count = 0;
+    for (int *p = array; p - array < *length; p++) {
+        if (*p == 0) {
+            count++;
+        }
+        if (*p > 0) break;
+    }
+    if (count) {
+        for (int *p = array, *q = array + count; q - array < *length; p++, q++) {
+            *p = *q;
+        }
+
+        *length = *length - count;
     }
 }
