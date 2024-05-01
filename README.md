@@ -43,6 +43,9 @@
 - `insertion_sort.c` - sorts an array in ascending order by using **Insertion Sort** method, which examines each element on the right-hand side of the array from the second element on to the end of the array and the inner loop shifts over elements on the sorted left-hand side of the array until the correct sorted position is found
 - `quick_sort_Lomuto.c` - sorts an array of 10 integer elements in ascending order by using **Quicksort** algorithm Lomuto
 
+## Dynamic Memory Allocation
+- `sort_no_leak.c` - sorts a dynamically allocating array in ascending order, using `calloc()` function. The length of the array is specified in *stdin* prior to inputting the array
+
 ## Tasks
 - `1_find_evens_sum.c` - receives the array's length and an array of integers via *stdin* and outputs in *stdout* the sum of the even elements of the array and the newly elements of the old one, by which the previously calculated sum is divided evenly
 - `2_cycle_shift.c` - receives the length of an array, the array and a number by which all elements of the array must rotate to the left or if the value is negative, to the right. The modified array is expected as output in *stdout*
