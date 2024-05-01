@@ -31,6 +31,7 @@
 
 ## Pointers:
 - `pointer_intro.c` - describes basic pointers concepts: creation, manipulation and pointer arithmetic
+- `const_pointer_vs_const_to_pointer.c` - describes the difference between a constant pointer and a pointer to a constant
 - `maxmin.c` - finds *max* and *min* out of 3 integer numbers and displays them on the screen
 - `squaring.c` - receives an array of integers via *stdin*, squares them and outputs the result to *stdout*
 - `stat.c` - receives an array of integers via *stdin*, displays it, calculates and displays on the new line a set of statistical metrics – maximum and minimum, the expected value and variance, assuming that we are dealing with a discrete uniform distribution
