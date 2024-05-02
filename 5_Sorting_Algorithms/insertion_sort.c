@@ -60,3 +60,15 @@ void insertion_sort(int *a, int n) {
         }
     }
 }
+// the same code with pointer use
+void insertion_sort(int *array, int length) {
+    for (int *p = array + 1; p - array < length; p++) {
+        int *start = p - 1;
+        while (start - array > -1 && *start > *(start + 1)) {
+            int tmp = *start;
+            *start = *(start + 1);
+            *(start + 1) = tmp;
+            start--;
+        }
+    }
+}

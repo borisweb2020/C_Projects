@@ -44,7 +44,7 @@
 - `quick_sort_Lomuto.c` - sorts an array of 10 integer elements in ascending order by using **Quicksort** algorithm Lomuto
 
 ## Dynamic Memory Allocation
-- `sort_no_leak.c` - sorts a dynamically allocating array in ascending order, using `calloc()` function. The length of the array is specified in *stdin* prior to inputting the array
+- `sort_no_leak.c` - sorts a dynamically allocated array in ascending order using `calloc()` function. The length of the array is specified in *stdin* prior to inputting the array. **Memory deallocation** is performed in cases of borth correct and incorrect data input. The _valgrind_ utility is used to test the program for memory leak
 
 ## Tasks
 - `1_find_evens_sum.c` - receives the array's length and an array of integers via *stdin* and outputs in *stdout* the sum of the even elements of the array and the newly elements of the old one, by which the previously calculated sum is divided evenly
